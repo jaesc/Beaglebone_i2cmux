@@ -1,0 +1,25 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: BeagleBone_adapter.GBR   10/01/2020  16:38:12
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.GTO                Top Overlay                             
+.GTP                Top Paste                               
+.GTS                Top Solder                              
+.GTL                Top Layer                               
+.GBL                Bottom Layer                            
+.GBS                Bottom Solder                           
+.GBP                Bottom Paste                            
+.GBO                Bottom Overlay                          
+.GM3                Mechanical 3                            
+.GM5                Mechanical 5                            
+.GM6                Mechanical 6                            
+.GM7                Mechanical 7                            
+.GM8                Mechanical 8                            
+.GKO                Keep-Out Layer                          
+.GPT                Top Pad Master                          
+.GPB                Bottom Pad Master                       
+------------------------------------------------------------------------------------------

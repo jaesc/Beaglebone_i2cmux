@@ -1,0 +1,251 @@
+/*
+ * Copyright (C) 2012 Texas Instruments Incorporated - http://www.ti.com/
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+/* 
+                USEFUL INFO
+Pin Mask:
+Bit 	Description
+6 	Slew Control. Slew Rate: Fast is 0, Slow is 1
+5 	Receiver Active. Input Enable: Receiver Disable 0, Receiver Enable 1
+4 	Pad Pullup/Pulldown Type. Pullup is 1, Pulldown is 0
+3 	Pad Pullup/Pulldown enable. Enabled is 0, Disabled is 1
+2-0 	Mode. Pad functional mux select. A number between 0 and 7 i.e. 000 and 111. This depends on which mode we require. 
+
+Compile:
+dtc -O dtb -o I2CMUX-00A0.dtbo -b 0 -@ I2CMUX-00A0.dts
+
+*/
+
+/dts-v1/;
+/plugin/;
+/*
+#include "am335x-bbw-bbb-base.h"
+#include "am33xx.h"
+*/
+/ {
+	compatible = "ti,beaglebone", "ti,beaglebone-black", "ti,beaglebone-green";
+
+	/* identification */
+	part-number = "I2CMUX1";
+	version = "00A0";
+
+	/* state the resources this cape uses */
+	exclusive-use =
+		/* the pin header uses */
+		"P9.26",	// i2c1_sda
+		"P9.24",	// i2c1_scl      
+		/* the hardware ip uses */
+		"i2c1";
+
+    aliases {
+  
+        i2c26 = &im_0;
+        i2c27 = &im_1;
+        i2c28 = &im_2;
+        i2c29 = &im_3;
+        i2c30 = &im_4;
+        i2c31 = &im_5;
+        i2c32 = &im_6;
+        i2c33 = &im_7;
+        i2c34 = &im_8;
+        i2c35 = &im_9;
+        i2c36 = &im_10;
+        i2c37 = &im_11;
+        i2c38 = &im_12;
+        i2c39 = &im_13;
+        i2c40 = &im_14;
+        i2c41 = &im_15;         
+    }; 
+    
+	/*fragment@0 {
+		target-path="/";
+		__overlay__ {
+
+			chosen {
+				overlays {
+					I2CMUX-00A0 = __TIMESTAMP__;
+				};
+			};
+		};
+	}; */  
+
+	/*
+	 * Free up the pins used by the cape from the pinmux helpers.
+	 */
+	fragment@0 {
+		target = <&ocp>;
+		__overlay__ {
+			P9_26_pinmux { status = "disabled"; };	/* i2c1_scl */
+			P9_24_pinmux { status = "disabled"; };	/* i2c1_sda */            
+		};
+	};
+
+	fragment@1 {
+		target = <&am33xx_pinmux>;
+		__overlay__ {
+			bb_i2c1_pins: pinmux_bb_i2c1_pins {
+				pinctrl-single,pins = <
+					0x180 0x73	/* i2c1_sda, SLEWCTRL_SLOW | INPUT_PULLUP | MODE3 */
+					0x184 0x73	/* i2c1_scl, SLEWCTRL_SLOW | INPUT_PULLUP | MODE3 */
+				>;
+			};
+		};
+	};  
+
+	fragment@2 {
+		target = <&i2c1>;
+		__overlay__ {
+			status = "okay";
+			pinctrl-names = "default";
+			pinctrl-0 = <&bb_i2c1_pins>;
+			/* this is the configuration part */
+			clock-frequency = <400000>;
+
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			/* PCA9548 I2C multiplexer */
+			i2cmux@70 {
+				#address-cells = <1>;
+				#size-cells = <0>;
+				compatible = "nxp,pca9548";
+				reg = <0x70>;
+
+				im_0: i2c@0 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <0>;
+					deselect_on_exit;
+				};
+				im_1: i2c@1 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <1>;
+					deselect_on_exit;
+				};
+				im_2: i2c@2 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <2>;
+					deselect_on_exit;
+				};
+				im_3: i2c@3 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <3>;
+					deselect_on_exit;
+				};
+				im_4: i2c@4 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <4>;
+					deselect_on_exit;
+				};
+				im_5: i2c@5 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <5>;
+					deselect_on_exit;
+				};
+				im_6: i2c@6 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <6>;
+					deselect_on_exit;
+				};
+				im_7: i2c@7 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <7>;
+					deselect_on_exit;
+				};                
+			};
+            
+			i2cmux@71 {
+				#address-cells = <1>;
+				#size-cells = <0>;
+				compatible = "nxp,pca9548";
+				reg = <0x71>;
+
+				im_8: i2c@0 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <0>;
+					deselect_on_exit;
+				};
+				im_9: i2c@1 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <1>;
+					deselect_on_exit;
+				};
+				im_10: i2c@2 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <2>;
+					deselect_on_exit;
+				};
+				im_11: i2c@3 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <3>;
+					deselect_on_exit;
+				};
+				im_12: i2c@4 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <4>;
+					deselect_on_exit;
+				};
+				im_13: i2c@5 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <5>;
+					deselect_on_exit;
+				};
+				im_14: i2c@6 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <6>;
+					deselect_on_exit;
+				};
+				im_15: i2c@7 {
+					#address-cells = <1>;
+					#size-cells = <0>;
+					compatible = "nxp,pca954x";
+					reg = <7>;
+					deselect_on_exit;
+				};                
+			};            
+		};
+	};    
+
+};
+
+
+
+
+
+
+
+

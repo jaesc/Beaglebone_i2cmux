@@ -1,0 +1,252 @@
+*************************************************************
+FileName = BeagleBone_adapter.GBR
+AutoAperture = True
+*************************************************************
+Generating : Mechanical 5
+      File : BeagleBone_adapter.GM5
+
+    Adding Layer      : Mechanical 5
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : BeagleBone_adapter.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D16
+    D17
+    D18
+    D19
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 6
+      File : BeagleBone_adapter.GM6
+
+    Adding Layer      : Mechanical 6
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : BeagleBone_adapter.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D16
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 3
+      File : BeagleBone_adapter.GM3
+
+    Adding Layer      : Mechanical 3
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : BeagleBone_adapter.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : BeagleBone_adapter.GPB
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D31
+    D32
+    D34
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 8
+      File : BeagleBone_adapter.GM8
+
+    Adding Layer      : Mechanical 8
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : BeagleBone_adapter.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D17
+    D18
+    D19
+    D31
+    D32
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 7
+      File : BeagleBone_adapter.GM7
+
+    Adding Layer      : Mechanical 7
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : BeagleBone_adapter.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D34
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : BeagleBone_adapter.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : BeagleBone_adapter.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D17
+    D18
+    D19
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : BeagleBone_adapter.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : BeagleBone_adapter.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D12
+    D14
+    D15
+    D27
+    D28
+    D30
+    D37
+    D38
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : BeagleBone_adapter.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D20
+    D24
+    D25
+    D35
+    D36
+*************************************************************
+
